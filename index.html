@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ZipMe</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="upload.svg">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Header -->
+    <div class="main-header">
+      <h1 class="logo">Zip<span>Me</span></h1>
+      <div class="header-controls">
+        <input type="date" id="dateSearch" placeholder="Search by date">
+        <button id="toggleSidebar">Analytics</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <!-- Side Panel -->
+      <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <h3>Chat Analytics</h3>
+          <button id="closeSidebar">×</button>
+        </div>
+        <div class="analytics-section">
+          <div class="stat-card">
+            <h4>Most Used Words</h4>
+            <div id="wordStats"></div>
+          </div>
+          <div class="stat-card">
+            <h4>Most Used Emojis</h4>
+            <div id="emojiStats"></div>
+          </div>
+          <div class="stat-card">
+            <h4>Response Times</h4>
+            <div id="responseStats"></div>
+          </div>
+          <div class="stat-card">
+            <h4>Chat Summary</h4>
+            <div id="chatSummary"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Chat Area -->
+      <div class="chat-area">
+
+    <!-- Upload Section -->
+    <div class="upload-section">
+          <div class="upload-in">
+            <img src="upload.svg" alt="upload file" />
+            <input type="file" id="zipInput" accept=".zip" hidden>
+            <label for="zipInput">Upload Zip</label>
+            <span id="fileName" class="file-name"></span>
+          </div>
+
+          <button id="goBtn">Load Chat</button>
+        </div>
+<div id="loadingOverlay" class="loading-overlay displayNone">
+  <div class="loader">Loading Chat...</div>
+</div>
+
+
+    <!-- Chat Display Area -->
+    <div class="chat-wrapper displayNone">
+    <div class="chat-header">
+  <div class="user-left" id="leftUser"></div>
+  <div class="user-right" id="rightUser"></div>
+</div>
+
+
+      <div id="chatContainer" class="chat-container"></div>
+
+          <button id="scrollToBottomBtn" class="scroll-btn">
+            ↓
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JSZip CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
